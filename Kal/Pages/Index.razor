@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<h1></h1>
+
+<h3>Basic Calendar</h3>
+
+<div>
+    @for (int day = 1; day <= DateTime.DaysInMonth(YearNow, MonthNow); day++)
+    {
+        <div>@day</div>
+    }
+    
+    <button @onclick="">Previous</button>
+    <button @onclick="">Next</button>
+
+</div>
+
+@code
+{
+
+}
