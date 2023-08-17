@@ -1,0 +1,47 @@
+﻿* {
+   
+}
+
+.tab {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+section > div {
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: fit-content;
+    text-align: center;
+
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    border: 2px solid black;
+    width: 100%;
+    background-color: #0d6efd;
+}
+.head .sectionRight input {
+    
+    float: right;
+}
+.dayOfWeek {
+    border: 2px solid black;
+    width: 100%;
+    background-color: #ffffff;
+}
+.blankWeek {
+    border: 2px solid black;
+    width: 100%;
+    background-color: gray;
+}
+.month {
+   
+}

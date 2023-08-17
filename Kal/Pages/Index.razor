@@ -1,21 +1,36 @@
 ﻿@page "/"
 
-<h1></h1>
+<link href="Kal.styles.css" rel="stylesheet">
 
-<h3>Basic Calendar</h3>
 
-<div>
-    @for (int day = 1; day <= DateTime.DaysInMonth(YearNow, MonthNow); day++)
+<section class="head">
+
+    <section class="sectionRight">
+        <h1 class="month">@kalendar.currentMonthName</h1>
+        <input type="month" @bind="kalendar.SelectedDate"/>
+        <button @onclick="kalendar.PreviousMonth">Previous</button>
+        <button @onclick="kalendar.NextMonth">Next</button>
+        @*<button @onclick="kalendar.GoToSelectedMonth">Go to Selected Month</button>*@
+    </section>
+</section>
+
+<div class="tab">
+    @foreach (var dayOfWeek in Enum.GetValues(typeof(DayOfWeek)))
     {
-        <div>@day</div>
+        <th class="dayOfWeek">@dayOfWeek</th>
     }
-    
-    <button @onclick="">Previous</button>
-    <button @onclick="">Next</button>
-
+    @for (int i = 0; i < kalendar.GetBlankColumnsOffset(); i++)
+    {
+        <th class ="blankWeek"></th> <!-- Blank column -->
+    }
+    @for (int day = 1; day <= DateTime.DaysInMonth(kalendar.YearNow, kalendar.MonthNow); day++)
+    {
+        <th>@day</th>
+    }
 </div>
+
 
 @code
 {
-
+    Kalc kalendar = new Kalc();
 }
